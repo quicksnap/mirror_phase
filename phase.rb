@@ -8,12 +8,10 @@ class Mirror
   end
 
   def initialize(string, limit)
-    limit ||= 8000
-    @string = string.dup
-
-    line_legth = mirror_string.length + 1    # This is character count for one line including newline
+    @string = string
     limit = (limit || 8000).to_i             # Second arg, char limit of output
-
+    line_legth = mirror_string.length + 1    # This is character count for one line including newline
+    
     @times = (limit / line_legth).floor    
   end
 
@@ -25,5 +23,5 @@ class Mirror
   end
 end
 
-mirror = Mirror.new(ARGV[0], ARGV[1])
+mirror = Mirror.new(ARGV[0].dup, ARGV[1])
 mirror.print_phase
