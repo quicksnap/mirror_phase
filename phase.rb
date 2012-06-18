@@ -12,7 +12,7 @@ class Mirror
     @string = string.dup
 
     line_legth = mirror_string.length + 1    # This is character count for one line including newline
-    limit = (limit || 8000).to_i        # Second arg, char limit of output
+    limit = (limit || 8000).to_i             # Second arg, char limit of output
 
     @times = (limit / line_legth).floor    
   end
